@@ -23,7 +23,7 @@ PROJECT_DIR = os.path.join(BASE_DIR, "App")
 SECRET_KEY = "django-insecure-3s18%l!t76@cx-l%%6&cauy^#*+m4h%ed#98jv12ax5^hxib+d"
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
 ALLOWED_HOSTS = []
 INTERNAL_IPS = ['127.0.0.1']
@@ -125,3 +125,7 @@ STATIC_URL = "static/"
 # https://docs.djangoproject.com/en/5.2/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
+import os
+
+ALLOWED_HOSTS = ["*"]
+STATIC_ROOT = os.path.join(BASE_DIR, "staticfiles")
