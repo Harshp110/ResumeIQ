@@ -2,24 +2,38 @@
 <html>
 <head>
     <title>Results</title>
+    <style>
+        body {
+            font-family: system-ui;
+            background: #020617;
+            color: #e5e7eb;
+            padding: 40px;
+        }
+        h2 { color: #38bdf8; }
+        ul { padding-left: 20px; }
+        a { color: #22d3ee; }
+    </style>
 </head>
 <body>
-    <h2>ATS Score: {{ ats_score }}</h2>
 
-    <h3>Matched Skills</h3>
-    <ul>
-        {% for s in matched %}
-        <li>{{ s }}</li>
-        {% endfor %}
-    </ul>
+<h2>ATS Score: {{ ats_score }}</h2>
 
-    <h3>Missing Skills</h3>
-    <ul>
-        {% for s in missing %}
-        <li>{{ s }}</li>
-        {% endfor %}
-    </ul>
+<h3>Matched Skills</h3>
+<ul>
+{% for s in matched %}
+<li>{{ s }}</li>
+{% endfor %}
+</ul>
 
-    <a href="/">Analyze another</a>
+<h3>Missing Skills</h3>
+<ul>
+{% for s in missing %}
+<li>{{ s }}</li>
+{% endfor %}
+</ul>
+
+<br>
+<a href="/">Analyze another resume</a>
+
 </body>
 </html>
