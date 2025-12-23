@@ -1,0 +1,43 @@
+{% extends "base.html" %}
+<select name="role" style="
+    width:100%;
+    padding:12px;
+    border-radius:10px;
+    margin-bottom:20px;
+">
+    <option value="backend">Backend Developer</option>
+    <option value="frontend">Frontend Developer</option>
+    <option value="data">Data Analyst</option>
+</select>
+
+
+{% block content %}
+<div style="max-width:520px; margin:0 auto;">
+
+    <div class="card" style="text-align:center;">
+
+        <h2 style="font-size:30px; font-weight:800; margin-bottom:10px;">
+            Upload Your Resume
+        </h2>
+
+        <p style="color:var(--muted); margin-bottom:32px;">
+            Get instant ATS score, skill-gap analysis,
+            and clear improvement suggestions.
+        </p>
+
+        <form method="post" action="/dashboard/" enctype="multipart/form-data">
+            {% csrf_token %}
+
+            <div style="margin-bottom:26px;">
+                <input type="file" name="resume" required>
+            </div>
+
+            <button type="submit">
+                Analyze Resume →
+            </button>
+        </form>
+
+    </div>
+
+</div>
+{% endblock %}
