@@ -1,48 +1,25 @@
-{% extends "base.html" %}
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Results</title>
+</head>
+<body>
+    <h2>ATS Score: {{ ats_score }}</h2>
 
-{% block content %}
-<div style="max-width:1100px; margin:0 auto;">
+    <h3>Matched Skills</h3>
+    <ul>
+        {% for s in matched %}
+        <li>{{ s }}</li>
+        {% endfor %}
+    </ul>
 
-    <h2 style="font-size:32px; font-weight:800; margin-bottom:32px;">
-        📊 Resume Insights
-    </h2>
+    <h3>Missing Skills</h3>
+    <ul>
+        {% for s in missing %}
+        <li>{{ s }}</li>
+        {% endfor %}
+    </ul>
 
-    <div style="display:grid; grid-template-columns:repeat(3,1fr); gap:24px;">
-
-        <div class="card">
-            <h3>ATS Score</h3>
-            <p style="font-size:36px; font-weight:800;">{{ ats_score }}</p>
-        </div>
-
-        <div class="card">
-            <h3>Skill Match</h3>
-            <p style="font-size:22px;">{{ skill_match }}</p>
-        </div>
-
-        <div class="card">
-            <h3>Resume Quality</h3>
-            <p style="font-size:22px;">{{ resume_quality }}</p>
-        </div>
-
-    </div>
-
-    <div class="card" style="margin-top:36px;">
-        <h3>Missing / Weak Skills</h3>
-        <ul>
-            {% for skill in missing_skills %}
-                <li>{{ skill }}</li>
-            {% endfor %}
-        </ul>
-    </div>
-
-    <div class="card" style="margin-top:36px;">
-        <h3>AI Improvement Suggestions</h3>
-        <ul>
-            {% for tip in suggestions %}
-                <li>{{ tip }}</li>
-            {% endfor %}
-        </ul>
-    </div>
-
-</div>
-{% endblock %}
+    <a href="/">Analyze another</a>
+</body>
+</html>
